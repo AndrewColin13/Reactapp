@@ -102,17 +102,18 @@ const SignupPage = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        const { name, email, password, confirmPassword } = formData;
+        const { password, confirmPassword } = formData;
         if (password !== confirmPassword) {
             alert("Passwords do not match!");
             return;
         }
 
-        // Add signup logic here
-        console.log('Signup attempted', { name, email, password });
-
         // Store user data in localStorage
-        localStorage.setItem("user", JSON.stringify(formData));
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        users.push(formData);
+        localStorage.setItem('users', JSON.stringify(users));
+
+        console.log('User registered:', formData);
 
         // Navigate to login page
         navigate('/login');
