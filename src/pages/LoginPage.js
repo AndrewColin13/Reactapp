@@ -95,9 +95,11 @@ const LoginPage = () => {
         console.log('Login attempted', { email, password });
         
         // Simple login validation
-        const storedUser = JSON.parse(localStorage.getItem('user'));
-        if (storedUser && storedUser.email === email) {
-            // Simplified login - in a real app, you'd check password too
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        console.log('Stored users:', users);
+        const user = users.find(user => user.email === email && user.password === password);
+        if (user) {
+            console.log('User found:', user);
             navigate('/home'); // Navigate to HomePage
         } else {
             alert('Invalid email or user not found');
