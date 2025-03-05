@@ -18,7 +18,7 @@ const styles = {
         alignItems: 'center',
         padding: '20px 5%',
         backgroundColor: '#1877f2',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.12)',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
     },
     logo: {
         fontSize: '24px',
@@ -41,7 +41,7 @@ const styles = {
         backgroundColor: 'white',
         border: 'none',
         padding: '10px 20px',
-        borderRadius: '5px',
+        borderRadius: '24px',
         cursor: 'pointer',
         fontSize: '16px',
         transition: 'background-color 0.3s ease',
@@ -160,6 +160,7 @@ const HomePage = () => {
 
             {/* Header with logout button */}
             <header style={styles.header}>
+                <p  style={styles.logo}>Guitar World</p>
                 <nav style={styles.nav}>
                     <button onClick={handleLogout} style={styles.logoutButton}>Logout</button>
                 </nav>
@@ -169,8 +170,8 @@ const HomePage = () => {
             <div style={styles.content}>
                 <h1 style={styles.title}>Welcome to Guitar World</h1>
                 <p style={styles.description}>
-                    Explore the world of guitars and find the perfect instrument for you. 
-                    Whether you're a beginner or a seasoned player, we have something for everyone.
+                Explore the world of guitars and find the perfect instrument for you. 
+                Whether you're a beginner or a seasoned player, we have something for everyone.
                 </p>
 
                 {/* Guitar List */}
